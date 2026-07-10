@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Project Week 2</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <header>
@@ -21,77 +22,85 @@
 
     <main>
       <section id="home">
-        <h2>Frontend Developer in Progress</h2>
-        <p>Learning modern web development one project at a time.</p>
+        <div class="hero-content">
+          <h2>Frontend Developer in Progress</h2>
+          <p>Learning modern web development one project at a time.</p>
+          <a href="#learning-journey" class="btn">Start Learning</a>
+        </div>
         <figure>
           <img
             src="./assets/hero.png"
             alt="Developer learning web development"
-            width="200px"
+            class="hero-image"
           />
         </figure>
-        <a href="#learning-journey" class="btn">Start Learning</a>
       </section>
       <section id="learning-journey">
         <h2>My Learning Journey</h2>
-        <article class="card">
-          <h3>HTML5</h3>
-          <p>Semantic HTML</p>
-          <p>Accessibility</p>
-          <p>Best Practices</p>
-        </article>
-        <article class="card">
-          <h3>CSS3</h3>
-          <p>Flexbox</p>
-          <p>Grid</p>
-          <p>Responsive</p>
-        </article>
-        <article class="card">
-          <h3>Git</h3>
-          <p>Commit</p>
-          <p>Branch</p>
-          <p>Merge</p>
-        </article>
+        <div class="card-container">
+          <article class="card">
+            <h3>HTML5</h3>
+            <p>Semantic HTML</p>
+            <p>Accessibility</p>
+            <p>Best Practices</p>
+          </article>
+          <article class="card">
+            <h3>CSS3</h3>
+            <p>Flexbox</p>
+            <p>Grid</p>
+            <p>Responsive</p>
+          </article>
+          <article class="card">
+            <h3>Git</h3>
+            <p>Commit</p>
+            <p>Branch</p>
+            <p>Merge</p>
+          </article>
+        </div>
       </section>
 
       <section id="skills">
         <h2>Skills</h2>
-        <div class="skill">
-          <p>HTML</p>
-          <span>90%</span>
-        </div>
-        <div class="skill">
-          <p>CSS</p>
-          <span>80%</span>
-        </div>
-        <div class="skill">
-          <p>Git</p>
-          <span>70%</span>
+        <div class="skill-container">
+          <div class="skill">
+            <p>HTML</p>
+            <span>90%</span>
+          </div>
+          <div class="skill">
+            <p>CSS</p>
+            <span>80%</span>
+          </div>
+          <div class="skill">
+            <p>Git</p>
+            <span>70%</span>
+          </div>
         </div>
       </section>
 
       <section id="projects">
         <h2>Projects</h2>
-        <article class="card">
-          <h3>Week 1</h3>
-          <p>Personal Learning Profile</p>
-          <a
-            href="https://github.com/sigitsyambudi/wph-week1-personal-learning-profile"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View Project</a
-          >
-        </article>
-        <article class="card">
-          <h3>Week 2</h3>
-          <p>Productive Weekend Landing Page</p>
-          <a
-            href="https://github.com/sigitsyambudi/wph-week2-productive-weekend-landing-page"
-            target="_blank"
-            rel="noopener noreferrer"
-            >View Progress</a
-          >
-        </article>
+        <div class="project-container">
+          <article class="card">
+            <h3>Week 1</h3>
+            <p>Personal Learning Profile</p>
+            <a
+              href="https://github.com/sigitsyambudi/wph-week1-personal-learning-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Project</a
+            >
+          </article>
+          <article class="card">
+            <h3>Week 2</h3>
+            <p>Productive Weekend Landing Page</p>
+            <a
+              href="https://github.com/sigitsyambudi/wph-week2-productive-weekend-landing-page"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Progress</a
+            >
+          </article>
+        </div>
       </section>
 
       <section id="quote">
