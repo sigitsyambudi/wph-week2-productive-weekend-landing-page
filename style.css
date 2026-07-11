@@ -48,6 +48,9 @@ section h2 {
 figure {
   margin: 0;
 }
+address {
+  font-style: normal;
+}
 blockquote {
   margin-top: 20px;
   padding: 24px 24px 24px 40px;
@@ -108,6 +111,26 @@ nav a::after {
   padding: var(--section-padding);
   min-height: 60vh;
 }
+#contact {
+  padding: var(--section-padding);
+}
+.contact-container {
+  background: var(--white);
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-container a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-container li {
+  margin-bottom: 12px;
+}
 .logo {
   font-size: 3rem;
   color: var(--secondary-color);
@@ -137,7 +160,9 @@ nav a::after {
   max-width: 100%;
   height: auto;
   animation: float 3s ease-in-out infinite;
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 .btn {
   display: inline-block;
@@ -209,6 +234,29 @@ nav a::after {
   font-weight: 600;
   color: var(--primary-color);
 }
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--border);
+  border-radius: 999px;
+  margin: 16px 0 8px;
+  overflow: hidden;
+}
+.progress {
+  height: 100%;
+  background-color: var(--primary-color);
+  border-radius: 999px;
+  animation: loadBar 1.5s ease forwards;
+}
+.progress.html {
+  --target-width: 90%;
+}
+.progress.css {
+  --target-width: 80%;
+}
+.progress.git {
+  --target-width: 70%;
+}
 .skill-container {
   display: flex;
   gap: 20px;
@@ -237,12 +285,17 @@ nav a:hover::after {
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
 }
+.contact-container a:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
 .hero-image:hover {
-  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 .card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-color: var(--primary-color);
 }
 .skill:hover {
   transform: translateY(-8px);
@@ -275,7 +328,8 @@ blockquote:hover {
   #learning-journey,
   #skills,
   #projects,
-  #quote {
+  #quote,
+  #contact {
     padding: 60px 30px;
   }
 }
@@ -337,6 +391,14 @@ blockquote:hover {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes loadBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
   }
 }
 
