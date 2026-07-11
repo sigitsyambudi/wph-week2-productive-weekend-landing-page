@@ -39,6 +39,9 @@ header {
   z-index: 100;
   border-bottom: 1px solid var(--border);
 }
+section {
+  scroll-margin-top: 90px;
+}
 section h2 {
   margin-bottom: 24px;
 }
@@ -47,13 +50,23 @@ figure {
 }
 blockquote {
   margin-top: 20px;
-  padding: 20px;
+  padding: 24px 24px 24px 40px;
   background-color: var(--white);
   border-left: 5px solid var(--primary-color);
   border-radius: 8px;
   font-style: italic;
   line-height: 1.8;
   transition: transform 0.3s ease;
+  position: relative;
+}
+blockquote::before {
+  content: '❝';
+  font-size: 2rem;
+  color: var(--primary-color);
+  position: absolute;
+  left: 18px;
+  top: 12px;
+  line-height: 1;
 }
 footer {
   text-align: center;
@@ -85,9 +98,6 @@ nav a::after {
   height: 2px;
   background: var(--primary-color);
   transition: width 0.3s ease;
-}
-nav a:hover::after {
-  width: 100%;
 }
 
 /* Components */
@@ -127,6 +137,7 @@ nav a:hover::after {
   max-width: 100%;
   height: auto;
   animation: float 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
 }
 .btn {
   display: inline-block;
@@ -143,6 +154,9 @@ nav a:hover::after {
   width: fit-content;
   font-weight: 600;
   cursor: pointer;
+}
+.btn:active {
+  transform: scale(0.98);
 }
 #learning-journey {
   padding: var(--section-padding);
@@ -215,10 +229,16 @@ nav a:hover::after {
 nav a:hover {
   color: var(--primary-color);
 }
+nav a:hover::after {
+  width: 100%;
+}
 .btn:hover {
   opacity: 0.9;
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+}
+.hero-image:hover {
+  transform: scale(1.03);
 }
 .card:hover {
   transform: translateY(-10px) scale(1.02);
@@ -234,6 +254,7 @@ blockquote:hover {
 .logo:hover {
   color: var(--primary-color);
   transform: scale(1.03);
+  cursor: pointer;
 }
 
 /* Responsive - Tablet */
@@ -317,4 +338,11 @@ blockquote:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 4px;
 }
